@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#159bb5"><meta name="description" content="Spa Business Manager - ระบบจัดการธุรกิจสปา">
+<link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="apple-touch-icon.png">
+<title>Spa Business Manager</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:light;--bg:#f2f4ef;--panel:#ffffff;--ink:#27332d;--muted:#78847c;--line:#e5eae3;--brand:#53796a;--brand2:#e8f1eb;--gold:#b8894e;--red:#b96861;--shadow:0 8px 26px #26382d0c;--radius:20px}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:"IBM Plex Sans Thai","Noto Sans Thai",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer}.app{min-height:100vh;display:grid;grid-template-columns:248px 1fr}.sidebar{background:#eeede6;border-right:1px solid var(--line);padding:26px 16px;display:flex;flex-direction:column;gap:24px}.brand{display:flex;gap:12px;align-items:center;padding:0 10px}.brand-mark{width:42px;height:42px;border-radius:14px;background:var(--brand);color:white;display:grid;place-items:center;font-size:22px}.brand strong{font-size:16px;display:block;letter-spacing:.2px}.brand small{color:var(--muted);font-size:11px}.nav{display:grid;gap:6px}.nav button{border:0;background:transparent;text-align:left;padding:12px 14px;border-radius:12px;color:#64716b;display:flex;gap:12px;align-items:center;font-size:14px}.nav button.active{background:var(--brand2);color:var(--brand);font-weight:700}.nav .ico{width:22px;text-align:center;font-size:17px}.side-note{margin-top:auto;background:#e5e5dc;padding:14px;border-radius:14px;color:var(--muted);font-size:12px;line-height:1.6}.main{padding:28px 34px 48px;max-width:1500px;width:100%;margin:auto}.top{display:flex;align-items:center;justify-content:space-between;margin-bottom:26px;gap:16px}.eyebrow{color:var(--muted);font-size:12px}.top h1{font-size:25px;margin:3px 0 0}.date-pill{background:var(--panel);border:1px solid var(--line);padding:10px 14px;border-radius:12px;color:#56645d;font-size:13px}.page{display:none}.page.active{display:block}.grid{display:grid;gap:16px}.stats{grid-template-columns:repeat(4,minmax(0,1fr));margin-bottom:18px}.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)}.stat-label{font-size:12px;color:var(--muted)}.stat-value{font-size:25px;font-weight:750;margin:9px 0 3px;letter-spacing:-.5px}.stat-foot{font-size:11px;color:var(--muted)}.stat-icon{width:34px;height:34px;border-radius:11px;background:var(--brand2);display:grid;place-items:center;margin-bottom:12px}.two{grid-template-columns:1.35fr 1fr}.section-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:16px}.section-head h2{font-size:16px;margin:0}.section-head p{font-size:12px;color:var(--muted);margin:4px 0 0}.btn{border:0;background:var(--brand);color:#fff;padding:10px 15px;border-radius:11px;font-size:13px;font-weight:650}.btn.secondary{background:#edf2ef;color:var(--brand)}.btn.ghost{background:var(--panel);color:#5f6d66;border:1px solid var(--line)}.btn.danger{background:#fff0ee;color:var(--red)}.table-wrap{overflow:auto}table{width:100%;border-collapse:collapse;min-width:540px}th,td{text-align:left;padding:12px 10px;border-bottom:1px solid var(--line);font-size:13px}th{font-size:11px;color:var(--muted);font-weight:600}td small{display:block;color:var(--muted);margin-top:3px}.amount{font-weight:700;white-space:nowrap}.positive{color:var(--brand)}.negative{color:var(--red)}.pill{display:inline-flex;padding:5px 9px;border-radius:99px;background:#eef3ef;color:#567267;font-size:11px}.pill.gold{background:#f8f1e7;color:#9a713e}.pill.red{background:#fff0ee;color:#ad5c55}.empty{padding:35px 15px;text-align:center;color:var(--muted);font-size:13px}.toolbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center}.field{display:grid;gap:6px;margin-bottom:13px}.field label{font-size:12px;color:#68756f;font-weight:650}.field input,.field select,.field textarea{width:100%;border:1px solid #dfe6e1;border-radius:10px;padding:11px 12px;background:#eeede6;color:var(--ink);outline:none}.field input:focus,.field select:focus{border-color:#80a99a;box-shadow:0 0 0 3px #315e5512}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 12px}.span2{grid-column:1/-1}.modal{position:fixed;inset:0;background:#14231f70;display:none;align-items:center;justify-content:center;padding:16px;z-index:10}.modal.show{display:flex}.modal-box{width:min(560px,100%);max-height:90vh;overflow:auto;background:var(--panel);border-radius:20px;padding:22px;box-shadow:0 20px 70px #0003}.modal-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}.modal-head h3{margin:0;font-size:18px}.close{border:0;background:#f0f3f1;border-radius:9px;width:34px;height:34px;font-size:19px}.actions{display:flex;justify-content:flex-end;gap:8px;margin-top:16px}.hidden{display:none!important}.lineup{display:grid;gap:10px}.booking-row{display:grid;grid-template-columns:74px 1fr auto;gap:14px;align-items:center;padding:14px;border:1px solid var(--line);border-radius:14px}.booking-time{font-weight:750;color:var(--brand);font-size:14px}.booking-title{font-weight:700;font-size:14px}.booking-sub{color:var(--muted);font-size:12px;margin-top:4px}.booking-side{text-align:right}.booking-side strong{display:block;font-size:14px;margin-bottom:6px}.service-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.service-card h3{font-size:15px;margin:0 0 7px}.service-card p{color:var(--muted);font-size:12px;margin:0 0 12px}.service-price{font-size:19px;font-weight:750;color:var(--brand)}.notice{background:#f7f4ed;border:1px solid #eee4d4;border-radius:13px;padding:13px 15px;color:#816b4d;font-size:12px;line-height:1.6;margin-bottom:16px}.subnav{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}.subnav button{border:1px solid var(--line);background:#fff;padding:8px 12px;border-radius:10px;font-size:12px;color:#68756f}.subnav button.active{background:var(--brand2);border-color:#d7e7df;color:var(--brand);font-weight:700}.settings-grid{grid-template-columns:1fr 1fr}.file-btn{display:inline-flex;align-items:center;gap:8px}.mobile-menu{display:none}.expense-icon{width:38px;height:38px;display:inline-grid;place-items:center;border-radius:13px;background:#edf3ee;font-size:20px;margin-right:9px;vertical-align:middle}.expense-name{display:flex;align-items:center;font-weight:650}.commission-preview{grid-column:1/-1;background:#edf4ef;border:1px solid #dce9df;border-radius:14px;padding:13px 15px;color:#426252;font-size:13px;line-height:1.8}.commission-preview strong{font-size:18px}.booking-row{background:#fff}.booking-side .paid-action{margin-top:5px}.pill.pending{background:#fff3df;color:#9a6b27}.pending-card{margin:16px 0;background:#fff8eb;border:1px solid #f0dfc3}.pending-item{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid #eee4d5}.pending-item:last-child{border-bottom:0}.nav button{font-weight:550}.card{transition:box-shadow .18s ease,transform .18s ease}.card:hover{box-shadow:0 10px 30px #26382d12}.section-head h2{letter-spacing:-.2px}.field input,.field select,.field textarea{background:#fbfcfa;border-color:#e1e8e1}.stat-icon{font-size:18px}.balance-card{background:linear-gradient(125deg,#365f50,#537d68);border:0}.balance-card:after{right:16px;top:-26px}@media(max-width:900px){.app{grid-template-columns:210px 1fr}.main{padding:24px 22px 40px}}
+.period-toolbar{display:flex;justify-content:space-between;align-items:center;gap:14px;margin-bottom:16px;padding:16px 20px}
+.period-caption{font-size:11px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
+.period-current{font-size:20px;font-weight:750;margin-top:3px;letter-spacing:-.3px}
+.period-actions{display:flex;align-items:center;gap:10px}
+.period-nav{display:flex;gap:6px}
+.period-arrow{width:38px;height:38px;padding:0;font-size:23px;line-height:1}
+.period-switch{display:flex;gap:3px;background:#dedfd6;padding:4px;border-radius:11px}
+.period-switch button{border:0;background:transparent;color:#737a71;padding:7px 13px;border-radius:8px;font-size:12px;font-weight:650}
+.period-switch button.active{background:#f5f3ec;color:#394b41;box-shadow:0 1px 4px #252d291c}
+.trend-card{margin:0 0 16px}
+.trend-legend{display:flex;gap:18px;color:var(--muted);font-size:12px;margin:-4px 0 12px}
+.trend-legend span{display:flex;align-items:center;gap:7px}
+.trend-legend i{width:9px;height:9px;border-radius:3px;display:inline-block}
+.legend-income{background:#647f70}.legend-expense{background:#c7bca9}
+.trend-chart{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:8px;align-items:end;min-height:150px}
+.month-col{display:grid;grid-template-rows:112px auto;gap:7px;min-width:0;text-align:center}
+.month-bars{display:flex;align-items:end;justify-content:center;gap:4px;height:112px;border-bottom:1px solid var(--line);padding:0 2px;cursor:pointer;border-radius:7px 7px 0 0}
+.month-bars:hover{background:#e8e8df}
+.month-bar{width:min(13px,35%);min-height:2px;border-radius:5px 5px 0 0;background:#647f70}
+.month-bar.exp{background:#c7bca9}
+.month-label{font-size:10px;color:var(--muted)}
+.month-col.selected .month-label{color:var(--brand);font-weight:800}
+.month-col.selected .month-bars{outline:1px solid #9aab9e;background:#e6e9df}
+.trend-empty{color:var(--muted);font-size:12px;text-align:center;padding:28px 0}
+.balance-card{background:#344f45;color:#f6f5ed;border:1px solid #344f45;padding:25px 27px;margin-bottom:16px;position:relative;overflow:hidden}
+.balance-card:after{content:"฿";position:absolute;right:24px;top:-35px;font-size:180px;line-height:1;color:#ffffff0b;font-weight:800;pointer-events:none}
+.balance-card .stat-label,.balance-card .stat-foot{color:#d0d9d1}.balance-value{font-size:clamp(32px,5vw,48px);font-weight:800;letter-spacing:-1px;margin:9px 0 5px;position:relative;z-index:1}.balance-caption{font-size:12px;color:#d0d9d1;position:relative;z-index:1}
+.page-period{margin-bottom:15px}.period-toolbar.compact{padding:13px 16px}.period-toolbar.compact .period-current{font-size:17px}.period-note{font-size:11px;color:var(--muted);margin-top:4px}
+@media(max-width:520px){.balance-card{padding:21px}.balance-value{font-size:30px}}
+@media(max-width:700px){.period-toolbar{align-items:flex-start;flex-direction:column}.period-actions{width:100%;justify-content:space-between}.trend-chart{gap:3px}.month-col{grid-template-rows:90px auto}.month-bars{height:90px}.month-label{font-size:9px}}
+
+
+.page-stats{margin:0 0 16px;grid-template-columns:repeat(4,minmax(0,1fr))}
+.page-stats .card{padding:17px 18px}
+.page-stats .stat-value{font-size:22px;overflow-wrap:anywhere}
+.balance-card{min-height:168px;display:flex;flex-direction:column;justify-content:center}
+.balance-card .balance-value{font-variant-numeric:tabular-nums}
+.balance-card .balance-caption{max-width:540px;line-height:1.6}
+.period-toolbar{background:#f7f5ef}
+.period-switch{background:#e7e7dd}
+.btn{transition:transform .15s ease,filter .15s ease}
+.btn:hover{filter:brightness(.97);transform:translateY(-1px)}
+.card{box-shadow:0 3px 14px #252d290a}
+@media(max-width:900px){.page-stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:520px){.page-stats{gap:9px}.page-stats .card{padding:13px}.page-stats .stat-value{font-size:19px}}
+
+@media(max-width:900px){.app{grid-template-columns:1fr}.sidebar{position:fixed;z-index:8;left:0;right:0;bottom:0;top:auto;padding:7px 8px calc(7px + env(safe-area-inset-bottom));border-right:0;border-top:1px solid var(--line);display:block}.brand,.side-note{display:none}.nav{display:grid;grid-template-columns:repeat(5,1fr);gap:2px}.nav button{display:flex;flex-direction:column;gap:3px;justify-content:center;text-align:center;padding:8px 2px;font-size:10px;border-radius:9px}.nav .ico{font-size:18px}.main{padding:22px 16px 100px}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.two{grid-template-columns:1fr}.service-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.top h1{font-size:22px}}
+@media(max-width:520px){.stats{gap:10px}.card{padding:15px}.stat-value{font-size:21px}.service-grid,.settings-grid{grid-template-columns:1fr}.booking-row{grid-template-columns:58px 1fr}.booking-side{grid-column:2;text-align:left;display:flex;align-items:center;gap:10px}.form-grid{grid-template-columns:1fr}.span2{grid-column:auto}.date-pill{font-size:11px;padding:8px}.section-head{align-items:flex-start}}
+
+/* Theme switch + goal and annual chart */
+.theme-toggle{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);background:var(--panel);color:var(--ink);padding:9px 13px;border-radius:12px;font-size:12px;font-weight:700;box-shadow:var(--shadow)}
+.top-tools{display:flex;align-items:center;gap:9px;flex-wrap:wrap;justify-content:flex-end}
+.dashboard-insights{display:grid;grid-template-columns:minmax(280px,.88fr) minmax(420px,1.5fr);gap:16px;margin:18px 0}
+.goal-card{overflow:hidden;position:relative;background:linear-gradient(145deg,#f4f8f3,#fff);}
+.goal-card:before{content:"";position:absolute;width:170px;height:170px;border-radius:50%;right:-55px;top:-70px;background:#dcebe0;opacity:.65}
+.goal-amount{font-size:26px;font-weight:800;letter-spacing:-.6px;margin:10px 0 2px;position:relative}
+.goal-progress{height:12px;border-radius:20px;background:#e5ebe5;overflow:hidden;margin:16px 0 10px;position:relative}
+.goal-progress>span{height:100%;display:block;width:0;border-radius:20px;background:linear-gradient(90deg,#6f9b80,#b4cf9d);transition:width .8s cubic-bezier(.2,.8,.2,1)}
+.goal-meta{display:flex;justify-content:space-between;gap:8px;color:var(--muted);font-size:11px}
+.achievement-track{display:flex;justify-content:space-between;align-items:center;margin:17px 0 5px;position:relative}
+.achievement-track:before{content:"";height:3px;background:#e3e9e2;position:absolute;left:8px;right:8px;top:10px}
+.achievement{z-index:1;display:grid;justify-items:center;gap:5px;font-size:10px;color:var(--muted)}
+.achievement i{width:21px;height:21px;border-radius:50%;border:3px solid #dfe7df;background:#fff;display:block;transition:all .5s}
+.achievement.reached i{background:#6f9b80;border-color:#d5e7d8;box-shadow:0 0 0 4px #e5f0e6;animation:pop .5s ease}
+@keyframes pop{0%{transform:scale(.6)}70%{transform:scale(1.18)}100%{transform:scale(1)}}
+.goal-settings{display:flex;gap:7px;margin-top:14px}.goal-settings input{width:50%;min-width:0;border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:10px;padding:8px 10px;font-size:12px}
+.goal-settings button{padding:8px 10px;font-size:11px}
+.annual-chart{min-width:0}.chart-legend{display:flex;gap:14px;font-size:11px;color:var(--muted)}.legend-dot{width:8px;height:8px;display:inline-block;border-radius:50%;margin-right:5px}
+.month-bars-list{display:grid;gap:8px}.month-bar-row{display:grid;grid-template-columns:42px 1fr 92px;gap:9px;align-items:center;border:0;background:transparent;padding:4px 6px;border-radius:9px;text-align:left;color:var(--ink);width:100%;cursor:pointer}
+.month-bar-row:hover,.month-bar-row.selected{background:var(--brand2)}.month-bar-label{font-size:11px;color:var(--muted);font-weight:650}.bar-pair{display:grid;gap:4px}.bar-track{height:8px;background:#edf0ec;border-radius:10px;overflow:hidden}.bar-fill{height:100%;border-radius:10px;min-width:0;transition:width .55s ease}.bar-fill.income{background:#6f9b80}.bar-fill.expense{background:#d5a16d}.month-bar-values{text-align:right;font-size:10px;color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap}
+body.dark{color-scheme:dark;--bg:#171e1b;--panel:#222c27;--ink:#e7eee8;--muted:#a0aea5;--line:#35423a;--brand:#8ab59c;--brand2:#2d4035;--gold:#d4ae78;--red:#e18a82;--shadow:0 8px 26px #0003}
+body.dark .sidebar{background:#1d2722;border-color:var(--line)}body.dark .nav button{color:#b2beb6}body.dark .side-note{background:#29362f;color:#aebbb2}body.dark .date-pill,body.dark .theme-toggle,body.dark .subnav button{background:var(--panel);color:var(--ink);border-color:var(--line)}body.dark .period-toolbar{background:var(--panel)}body.dark .period-switch{background:#17211c}body.dark .period-switch button.active{background:#40564a;color:#f2f7f3}body.dark .field input,body.dark .field select,body.dark .field textarea{background:#19231e;border-color:var(--line);color:var(--ink)}body.dark .goal-card{background:linear-gradient(145deg,#263a30,#222c27)}body.dark .goal-card:before{background:#365343}body.dark .goal-progress,body.dark .achievement-track:before,body.dark .bar-track{background:#3a4940}body.dark .achievement i{background:#222c27;border-color:#52645a}body.dark .achievement.reached i{background:#8ab59c;border-color:#3e5948}body.dark .goal-settings input{background:#19231e;color:var(--ink);border-color:var(--line)}body.dark .month-bar-row:hover,body.dark .month-bar-row.selected{background:#30483a}body.dark .booking-row{background:var(--panel)}body.dark .btn.secondary{background:#30443a;color:#dcebe1}body.dark .btn.ghost{background:var(--panel);color:var(--ink);border-color:var(--line)}body.dark .notice{background:#352f25;border-color:#514536;color:#d2b88f}body.dark .modal-box{background:var(--panel)}body.dark .close{background:#35433b;color:var(--ink)}
+@media(max-width:900px){.dashboard-insights{grid-template-columns:1fr}.month-bars-list{gap:6px}}
+@media(max-width:520px){.month-bar-row{grid-template-columns:35px 1fr 82px;gap:6px}.month-bar-values{font-size:9px}.goal-amount{font-size:23px}.top-tools{width:100%}.top{align-items:flex-start}.top-tools .date-pill{display:none}}
+
+
+/* V7 visual refresh: warm, polished spa dashboard */
+:root{--bg:#f5f6f2;--panel:#fff;--ink:#26352e;--muted:#849087;--line:#e8ece6;--brand:#557b68;--brand2:#edf4ee;--shadow:0 5px 22px rgba(40,62,49,.055);--radius:22px}
+body{font-size:14px;letter-spacing:.01em;background:radial-gradient(ellipse at 80% -10%,#e8f0e8 0,transparent 36%),var(--bg);transition:background .25s,color .25s}
+.app{grid-template-columns:254px minmax(0,1fr)}
+.sidebar{background:rgba(250,251,248,.92);backdrop-filter:blur(16px);padding:28px 17px;border-color:#e9eee8;gap:28px}
+.brand{padding:0 9px}.brand-mark{width:46px;height:46px;border-radius:16px;box-shadow:0 7px 16px #557b6826}.brand strong{font-size:16px;letter-spacing:-.3px}
+.nav{gap:7px}.nav button{padding:12px 14px;border-radius:14px;font-size:13px;color:#78857c;transition:background .18s,color .18s,transform .18s}.nav button:hover{background:#f0f4ef;transform:translateX(2px)}.nav button.active{background:linear-gradient(110deg,#e7f0e8,#f1f6f1);color:#426b56;box-shadow:inset 3px 0 #6d9a7b}
+.side-note{background:#f0f2ec;border:1px solid #e8ece4;border-radius:17px;padding:15px}
+.main{padding:30px clamp(18px,3vw,46px) 54px;max-width:1580px}
+.top{margin-bottom:24px}.eyebrow{font-size:10px;font-weight:750;letter-spacing:.16em;color:#91a096}.top h1{font-size:27px;letter-spacing:-.7px}.date-pill,.theme-toggle{border-radius:14px;padding:10px 14px}.theme-toggle{box-shadow:0 4px 14px #304b3a0a;transition:transform .18s,box-shadow .18s}.theme-toggle:hover{transform:translateY(-1px);box-shadow:0 7px 18px #304b3a12}
+.card{border-color:#e9eee8;border-radius:21px;padding:21px;box-shadow:0 4px 18px rgba(42,62,48,.035);transition:transform .2s,box-shadow .2s}.card:hover{box-shadow:0 9px 25px rgba(42,62,48,.07)}
+.period-toolbar{padding:15px 19px;border-radius:18px}.period-current{font-size:19px}.period-switch{background:#f0f3ee;border-radius:12px}.period-switch button{border-radius:9px}.period-switch button.active{background:white;color:#456e57;box-shadow:0 2px 7px #314b3a12}
+.balance-card{position:relative;overflow:hidden;border-radius:24px;padding:25px 27px;background:linear-gradient(118deg,#355f4e 0%,#4f8068 58%,#71967a 100%);box-shadow:0 12px 28px #315b4726}.balance-card:before{content:"";position:absolute;width:260px;height:260px;border-radius:50%;right:7%;top:-170px;border:1px solid #ffffff25;box-shadow:0 0 0 25px #ffffff08,0 0 0 52px #ffffff06}.balance-card:after{content:"";position:absolute;width:130px;height:130px;border-radius:50%;right:22%;bottom:-105px;background:#ffffff0c}.balance-card .stat-label{color:#d8e8dc;font-size:13px}.balance-value{font-size:clamp(32px,4vw,43px);font-weight:800;letter-spacing:-1.2px;margin:7px 0 3px;color:white;position:relative;z-index:1}.balance-caption{color:#d1e0d5;font-size:11px;position:relative;z-index:1}
+.stats{gap:13px;margin:14px 0 18px}.stats .card{padding:17px 18px;border-radius:18px}.stat-icon{width:37px;height:37px;border-radius:13px;background:#edf4ee;color:#557b68;margin-bottom:13px}.stat-label{font-size:12px}.stat-value{font-size:23px;letter-spacing:-.6px;margin:7px 0 2px}.stat-foot{font-size:10px}
+.dashboard-insights{grid-template-columns:minmax(260px,.82fr) minmax(430px,1.45fr);gap:15px;margin:16px 0}.goal-card{background:linear-gradient(145deg,#f3f8f2,#fff 70%);border-color:#e6eee5}.goal-card:before{width:210px;height:210px;right:-90px;top:-115px;background:#e0ede0}.goal-amount{font-size:25px}.goal-progress{height:10px;background:#e8eee7}.goal-progress>span{background:linear-gradient(90deg,#648d73,#a9c78f)}.achievement-track{margin:19px 0 8px}.achievement{font-size:10px}.achievement i{width:22px;height:22px}.goal-settings{margin-top:17px}.goal-settings input{border-radius:12px;padding:9px 11px;background:#fff}.goal-settings button{border-radius:12px}
+.annual-chart{padding:20px 20px 17px;min-width:0;display:flex;flex-direction:column;min-height:280px}.annual-chart .section-head{align-items:flex-start;margin-bottom:11px}.annual-chart .section-head h2{font-size:15px}.annual-chart .section-head p{font-size:11px}.chart-legend{gap:11px;font-size:10px;white-space:nowrap}.legend-dot{width:7px;height:7px}
+.month-bars-list{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:4px;align-items:stretch;min-height:0;flex:1;padding:8px 0 0}.month-column{min-width:0;display:grid;grid-template-rows:15px minmax(150px,1fr) 22px;align-items:end;gap:5px;padding:5px 2px 3px;border:0;background:transparent;border-radius:11px;color:var(--ink);cursor:pointer;transition:background .18s,transform .18s}.month-column:hover{background:#f1f5f0;transform:translateY(-2px)}.month-column.selected{background:#edf4ee;box-shadow:inset 0 0 0 1px #dce9dd}.column-values{display:flex;justify-content:center;gap:3px;overflow:hidden;white-space:nowrap;font-size:8px;color:var(--muted);font-variant-numeric:tabular-nums}.column-values i{font-style:normal;max-width:50%;overflow:hidden;text-overflow:clip}.column-plot{height:100%;min-height:150px;display:flex;align-items:end;justify-content:center;gap:3px;border-bottom:1px solid #e7ece6;padding:0 1px}.column-bar{width:min(11px,39%);min-height:0;border-radius:5px 5px 2px 2px;display:block;transition:height .55s cubic-bezier(.2,.8,.2,1);box-shadow:0 2px 5px #253b2c0c}.column-bar.income{background:linear-gradient(180deg,#9fc5a5,#628d73)}.column-bar.expense{background:linear-gradient(180deg,#edc69b,#ce9867)}.column-label{font-size:9px;color:var(--muted);font-weight:650;text-align:center;white-space:nowrap}.month-column.selected .column-label{color:var(--brand);font-weight:800}
+.section-head{margin-bottom:15px}.section-head h2{font-size:15px;letter-spacing:-.25px}.section-head p{font-size:11px}.btn{border-radius:12px;padding:10px 15px;box-shadow:0 3px 9px #355f4e12;transition:transform .16s,filter .16s}.btn:hover{filter:brightness(1.03);transform:translateY(-1px)}.btn.secondary{background:#edf4ee;color:#4f765f;box-shadow:none}.btn.ghost{box-shadow:none}
+.table-wrap table{min-width:500px}th{letter-spacing:.04em}td,th{padding:13px 10px}.booking-row{border-radius:16px;padding:15px}.pending-card{background:#fffaf1;border-color:#f1e6d3}.pending-item{padding:12px 3px}.pill{padding:5px 10px;border-radius:20px;font-weight:650}.service-card{border-radius:19px}.service-card h3{letter-spacing:-.2px}.field{gap:7px}.field label{font-size:12px}.field input,.field select,.field textarea{border-radius:12px;padding:12px 13px;background:#fbfcfa}.modal-box{border-radius:24px;padding:24px}
+body.dark{--bg:#151d19;--panel:#202b25;--ink:#e8eee9;--muted:#a2b0a6;--line:#35443a;--brand:#91b99e;--brand2:#2d4034;--shadow:0 8px 24px #0003;background:radial-gradient(ellipse at 80% -10%,#263a2d 0,transparent 38%),var(--bg)}
+body.dark .sidebar{background:rgba(27,38,31,.94);border-color:#34443a}body.dark .nav button:hover{background:#29382f}body.dark .nav button.active{background:linear-gradient(110deg,#2a4033,#29392f);color:#b6d3bd;box-shadow:inset 3px 0 #91b99e}body.dark .side-note{background:#25332a;border-color:#35463a}body.dark .period-switch{background:#19241e}body.dark .period-switch button.active{background:#344a3b;color:#e5f0e7}body.dark .goal-card{background:linear-gradient(145deg,#26392d,#202b25 75%);border-color:#34463a}body.dark .goal-card:before{background:#354d3a}body.dark .goal-progress,body.dark .achievement-track:before{background:#394a3e}body.dark .goal-settings input{background:#1b2720;border-color:#3b4b40}body.dark .month-column:hover,body.dark .month-column.selected{background:#2a3d31}body.dark .column-plot{border-color:#3b4a40}body.dark .field input,body.dark .field select,body.dark .field textarea{background:#1b2720;border-color:#3a4a3f}body.dark .pending-card{background:#302a20;border-color:#4b4030}body.dark .btn.secondary{background:#30483a;color:#d9e9dd}body.dark .booking-row{background:var(--panel)}body.dark .close{background:#34443a;color:var(--ink)}
+@media(max-width:1100px){.dashboard-insights{grid-template-columns:minmax(240px,.8fr) minmax(360px,1.2fr)}.month-bars-list{gap:2px}.column-values{font-size:7px}}
+@media(max-width:900px){.app{grid-template-columns:1fr}.sidebar{background:rgba(250,251,248,.96)}.main{padding:22px 18px 105px}.dashboard-insights{grid-template-columns:1fr}.annual-chart{min-width:0}.month-bars-list{gap:5px}.column-values{font-size:8px}}
+@media(max-width:560px){.annual-chart{min-height:230px}.main{padding:17px 12px 100px}.top{gap:10px;align-items:flex-start}.top h1{font-size:22px}.top-tools{gap:6px}.theme-toggle{padding:9px 11px}.card{padding:17px;border-radius:18px}.balance-card{padding:21px}.stats{gap:9px}.stats .card{padding:14px}.stat-value{font-size:20px}.dashboard-insights{gap:11px}.annual-chart{padding:15px 10px}.annual-chart .section-head{flex-wrap:wrap}.month-bars-list{grid-template-columns:repeat(12,minmax(0,1fr));gap:1px}.month-column{grid-template-rows:13px 90px 20px;padding:4px 0}.column-plot{height:90px;gap:2px}.column-bar{width:36%;border-radius:4px 4px 1px 1px}.column-values{font-size:6px;gap:1px}.column-label{font-size:8px}.goal-amount{font-size:23px}.goal-settings{flex-wrap:wrap}.goal-settings input{width:calc(50% - 4px)}.goal-settings button{width:100%}.period-toolbar{padding:14px}.period-actions{gap:7px}.period-switch button{padding:7px 9px}}
+
+
+/* V8: clear white day mode, corrected theme labels and goal illustration */
+:root{--bg:#f7f8fb;--panel:#fff;--ink:#263342;--muted:#778596;--line:#e8edf2;--brand:#477c67;--brand2:#edf5f0;--shadow:0 6px 24px rgba(38,55,72,.055)}
+body{background:#f7f8fb;color:#263342} .sidebar{background:#fff;border-color:#e9edf2}.side-note{background:#f2f5f8}.period-toolbar{background:#fff}.field input,.field select,.field textarea{background:#fff}
+.dashboard-lower{grid-template-columns:1.05fr .95fr;align-items:stretch;margin-top:16px}.dashboard-lower>.card{min-width:0}.dashboard-lower .lineup{gap:8px}.dashboard-lower .pending-item{padding:13px 5px;border-bottom-color:var(--line)}
+.climb-scene{position:relative;margin:12px -4px 3px;border-radius:18px;overflow:hidden;background:linear-gradient(180deg,#f1f7ff,#fff 88%);height:154px}.climb-scene svg{width:100%;height:100%;display:block}.climber{transform-origin:238px 160px;animation:climbStep 3.8s ease-in-out infinite}.climb-caption{position:absolute;left:13px;bottom:8px;color:#71849a;font-size:10px;letter-spacing:.02em;background:#ffffffc9;padding:3px 8px;border-radius:20px}@keyframes climbStep{0%,100%{transform:translate(0,0)}50%{transform:translate(8px,-9px)}}
+body.dark{color-scheme:dark;--bg:#151b20;--panel:#202a31;--ink:#edf2f5;--muted:#a3b0ba;--line:#35434c;--brand:#8dbba2;--brand2:#2c4037;--shadow:0 8px 26px #0004;background:#151b20;color:var(--ink)}
+body.dark .sidebar{background:#1b252b;border-color:var(--line)}body.dark .side-note{background:#25323a;color:var(--muted)}body.dark .period-toolbar,body.dark .card{background:var(--panel);border-color:var(--line)}body.dark .field input,body.dark .field select,body.dark .field textarea{background:#182229;border-color:var(--line);color:var(--ink)}body.dark .climb-scene{background:linear-gradient(180deg,#243646,#202a31)}body.dark .climb-caption{background:#263743;color:#c2d4e2}body.dark .dashboard-lower .pending-item{border-color:var(--line)}body.dark .btn.secondary{background:#2c4037;color:#d8e9df}
+@media(max-width:900px){.dashboard-lower{grid-template-columns:1fr}}
+
+
+/* V9 visual direction: crisp aqua / ocean blue system palette */
+:root{--bg:#f4f9fc;--panel:#ffffff;--ink:#203344;--muted:#71869a;--line:#e3edf3;--brand:#159bb5;--brand2:#e2f5f8;--gold:#d39b52;--red:#d95b66;--shadow:0 7px 25px rgba(31,77,101,.065)}
+body{background:radial-gradient(ellipse at 80% -10%,#e2f5fa 0,transparent 38%),var(--bg);color:var(--ink)}
+.sidebar{background:rgba(255,255,255,.94);border-color:#e3edf3}.brand-mark{background:linear-gradient(145deg,#24b7c8,#258bc1);box-shadow:0 7px 16px #159bb52b}.eyebrow{color:#64a6b5}.nav button{color:#71869a}.nav button:hover{background:#eff8fa}.nav button.active{background:linear-gradient(110deg,#e1f5f8,#f0fafb);color:#117e99;box-shadow:inset 3px 0 #20a8bd}.side-note{background:#edf6f8;border-color:#e1eef2}
+.period-switch{background:#edf4f7}.period-switch button.active{background:#fff;color:#137f9c;box-shadow:0 2px 7px #234e6412}.btn{box-shadow:0 3px 9px #176c8512}.btn.secondary{background:#e5f4f7;color:#147e98}.btn.primary,.btn:not(.secondary):not(.ghost):not(.paid-action){background:linear-gradient(135deg,#1aa9bf,#238dbb);color:#fff}.stat-icon{background:#e4f5f7;color:#168da5}.balance-card{background:linear-gradient(118deg,#176f91 0%,#168eaa 58%,#42b7c4 100%);box-shadow:0 12px 28px #176f9126}.goal-card{background:linear-gradient(145deg,#f0fbfd,#fff 72%);border-color:#dceff3}.goal-card:before{background:#dff3f6}.goal-progress{background:#e4f0f3}.goal-progress>span{background:linear-gradient(90deg,#16a5bc,#61c6d0)}.achievement.reached i{background:#22a9be;border-color:#168da5}.achievement-track:before{background:#dcecf0}.achievement i{border-color:#cfe3e9;background:#fff}.month-column:hover{background:#eff8fa}.month-column.selected{background:#e8f6f8;box-shadow:inset 0 0 0 1px #ccebf0}.month-column.selected .column-label{color:#1289a3}.column-bar.income{background:linear-gradient(180deg,#55c5d0,#1599b4)}.column-bar.expense{background:linear-gradient(180deg,#f1c58f,#d49a5d)}.chart-legend .legend-dot:first-child{background:#159bb5!important}.nav button.active .ico{color:#138ca5}.pill{background:#e8f5f7;color:#177e96}.pending-card{background:#fff9f2;border-color:#f1e6d6}
+/* The mountain is intentionally fresh green, unlike the aqua app chrome. */
+.climb-scene{background:linear-gradient(180deg,#f1fbff,#fff 90%)}.climb-scene svg defs #peakA stop:first-child{stop-color:#9de68d}.climb-scene svg defs #peakA stop:last-child{stop-color:#58c76d}.climb-scene svg defs #peakB stop:first-child{stop-color:#6bd47b}.climb-scene svg defs #peakB stop:last-child{stop-color:#2eaa5b}.climb-scene svg path[fill="#e6edf6"]{fill:#e8f0f4}.climb-caption{color:#58778a}
+/* Compact monthly booking calendar */
+.booking-calendar-card{max-width:760px;margin:0 auto 17px;padding:20px 24px}.calendar-heading{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:15px}.calendar-heading h2{font-size:16px;margin:0}.calendar-heading p{font-size:11px;color:var(--muted);margin:3px 0 0}.calendar-month{font-size:14px;font-weight:750;color:#168ba5}.calendar-weekdays,.calendar-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:5px;text-align:center}.calendar-weekdays{margin-bottom:6px;color:#8295a4;font-size:10px;font-weight:700}.calendar-day{height:38px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;border-radius:10px;font-size:12px;color:var(--ink);position:relative}.calendar-day.blank{visibility:hidden}.calendar-day.has-booking{background:#fff1f1;color:#b94d59;font-weight:800}.calendar-day.has-booking i{display:block;width:5px;height:5px;border-radius:50%;background:#e25360}.calendar-day.is-today{outline:1px solid #159bb5;outline-offset:-1px}.calendar-day.is-today b{color:#1389a4}
+body.dark{--bg:#111d27;--panel:#1c2b36;--ink:#e8f1f5;--muted:#a1b4c0;--line:#344956;--brand:#52c1d0;--brand2:#263f4b;background:radial-gradient(ellipse at 80% -10%,#1b3b49 0,transparent 40%),var(--bg);color:var(--ink)}
+body.dark .sidebar{background:rgba(24,39,49,.96);border-color:#344956}body.dark .nav button{color:#a9bbc5}body.dark .nav button:hover{background:#263d49}body.dark .nav button.active{background:linear-gradient(110deg,#244652,#203b47);color:#a8e5ed;box-shadow:inset 3px 0 #4ec0d0}body.dark .side-note{background:#223844;border-color:#344956}body.dark .period-switch{background:#172832}body.dark .period-switch button.active{background:#31515e;color:#e7f6f8}body.dark .btn.secondary{background:#294651;color:#bdeaf0}body.dark .goal-card{background:linear-gradient(145deg,#203b46,#1c2b36 75%);border-color:#355361}body.dark .goal-card:before{background:#2b5960}body.dark .goal-progress,body.dark .achievement-track:before{background:#3a535d}body.dark .achievement i{background:#1c2b36;border-color:#526b76}body.dark .achievement.reached i{background:#27a9bc;border-color:#247f91}body.dark .month-column:hover,body.dark .month-column.selected{background:#294653}body.dark .column-plot{border-color:#3c535e}body.dark .booking-calendar-card{background:var(--panel)}body.dark .calendar-day{color:var(--ink)}body.dark .calendar-day.has-booking{background:#512f38;color:#ffd6da}body.dark .calendar-day.is-today{outline-color:#58c5d2}body.dark .calendar-month{color:#74d0dc}body.dark .climb-scene{background:linear-gradient(180deg,#203c4b,#1c2b36)}body.dark .climb-caption{background:#263f4b;color:#c1dce5}body.dark .pending-card{background:#342e28;border-color:#514438}
+@media(max-width:560px){.booking-calendar-card{padding:16px 13px}.calendar-day{height:34px;font-size:11px}.calendar-weekdays,.calendar-grid{gap:3px}}
+
+
+/* Booking schedule and time-range controls */
+.field-hint{display:block;color:var(--muted);font-size:11px;margin-top:5px}
+.calendar-day{cursor:pointer;border:0;background:transparent;width:100%;font-family:inherit}
+.calendar-day.selected{background:#e2f6fa;box-shadow:inset 0 0 0 2px #159bb5;color:#087e98;font-weight:800}
+body.dark .calendar-day.selected{background:#254b57;color:#b9f1f5;box-shadow:inset 0 0 0 2px #58c5d2}
+.day-availability{max-width:960px;margin:0 auto 18px}
+.schedule-legend{display:flex;gap:14px;flex-wrap:wrap;color:var(--muted);font-size:11px;margin:0 0 12px}
+.schedule-legend span{display:flex;align-items:center;gap:5px}.schedule-legend i{width:9px;height:9px;border-radius:3px;display:inline-block}
+.schedule-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.schedule-slot{border:1px solid var(--line);border-radius:12px;padding:9px 10px;min-height:58px;background:var(--panel);text-align:left;color:var(--ink)}
+.schedule-slot strong{display:block;font-size:12px}.schedule-slot small{display:block;font-size:10px;color:var(--muted);margin-top:3px}
+.schedule-slot.free{background:#effaf6;border-color:#cdebdc}.schedule-slot.busy{background:#fff0f0;border-color:#f3caca}.schedule-slot.closed{opacity:.5}
+body.dark .schedule-slot.free{background:#203b35;border-color:#315c4e}body.dark .schedule-slot.busy{background:#482d35;border-color:#70434d}
+.schedule-bookings{display:grid;gap:8px;margin-top:14px}.schedule-booking{display:flex;justify-content:space-between;gap:12px;padding:10px 12px;border:1px solid var(--line);border-radius:12px;font-size:12px}
+.schedule-booking b{font-size:12px}.schedule-booking small{color:var(--muted)}
+@media(max-width:650px){.schedule-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.schedule-slot{min-height:54px}.day-availability{padding:14px}}
+
+</style>
+</head>
+<body>
+<div class="app">
+<aside class="sidebar">
+ <div class="brand"><div class="brand-mark">✦</div><div><strong>Spa Manager</strong><small>BUSINESS MANAGEMENT</small></div></div>
+ <nav class="nav" id="nav">
+  <button class="active" data-page="dashboard"><span class="ico">▦</span>ภาพรวม</button>
+  <button data-page="bookings"><span class="ico">▤</span>จองคิว / รายรับ</button>
+  <button data-page="expenses"><span class="ico">↘</span>รายจ่าย</button>
+  <button data-page="services"><span class="ico">♧</span>บริการ</button>
+  <button data-page="settings"><span class="ico">⚙</span>ตั้งค่า</button>
+ </nav>
+ <div class="side-note">ระบบจัดการธุรกิจสปา<br>ข้อมูลถูกบันทึกไว้ในอุปกรณ์นี้</div>
+</aside>
+<main class="main">
+ <header class="top"><div><div class="eyebrow">SPA BUSINESS MANAGER</div><h1 id="pageTitle">ภาพรวมธุรกิจ</h1></div><div class="top-tools"><button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" aria-label="เปลี่ยนโหมดสี"><span id="themeIcon">☾</span><span id="themeText">โหมดกลางคืน</span></button><div class="date-pill" id="todayLabel"></div></div></header>
+ <section class="page active" id="page-dashboard">
+  <div class="period-toolbar card">
+   <div><div class="period-caption">สรุปผลประกอบการ</div><div class="period-current" id="periodLabel">พฤศจิกายน 2569</div></div>
+   <div class="period-actions">
+    <div class="period-nav"><button class="btn ghost period-arrow" onclick="shiftPeriod(-1)" aria-label="ช่วงก่อนหน้า">‹</button><button class="btn ghost period-arrow" onclick="shiftPeriod(1)" aria-label="ช่วงถัดไป">›</button></div>
+    <div class="period-switch"><button id="monthMode" class="active" onclick="setPeriodMode('month')">รายเดือน</button><button id="yearMode" onclick="setPeriodMode('year')">รายปี</button></div>
+   </div>
+  </div>
+  <div class="card balance-card"><div class="stat-label">ยอดเงินในบัญชีโดยประมาณ</div><div class="balance-value" id="bankBalance">฿0.00</div><div class="balance-caption">ยอดตั้งต้น + รายรับสะสม − รายจ่ายสะสมทั้งหมด รวมเจ้าของเบิก · ไม่เปลี่ยนตามตัวกรองเดือน/ปี</div></div>
+  <div class="grid stats">
+   <div class="card"><div class="stat-icon">฿</div><div class="stat-label" id="incomeLabel">รายรับเดือนนี้</div><div class="stat-value" id="dashIncome">฿0</div><div class="stat-foot">นับเฉพาะรายการที่ชำระแล้ว</div></div>
+   <div class="card"><div class="stat-icon">↘</div><div class="stat-label" id="expenseLabel">รายจ่ายเดือนนี้</div><div class="stat-value" id="dashExpense">฿0</div><div class="stat-foot">รวมรายจ่ายดำเนินงาน</div></div>
+   <div class="card"><div class="stat-icon">✧</div><div class="stat-label" id="profitLabel">กำไรจากการดำเนินงาน</div><div class="stat-value" id="dashProfit">฿0</div><div class="stat-foot">ไม่รวมเจ้าของเบิก</div></div>
+   <div class="card"><div class="stat-icon">◉</div><div class="stat-label" id="ownerLabel">เจ้าของเบิกเดือนนี้</div><div class="stat-value" id="dashOwner">฿0</div><div class="stat-foot">นับเป็นเงินออกจากบัญชี</div></div>
+  </div>
+  <div class="dashboard-insights">
+   <section class="card goal-card"><div class="section-head"><div><h2>เป้าหมายรายรับ</h2><p id="goalPeriodName">เป้าหมายประจำเดือน</p></div><span class="pill" id="goalBadge">0%</span></div>
+    <div class="goal-amount" id="goalProgressText">฿0 / ฿0</div><div class="goal-progress"><span id="goalProgressBar"></span></div>
+    <div class="goal-meta"><span id="goalEarnedText">ทำได้แล้ว ฿0</span><span id="goalRemainText">เหลือ ฿0</span></div>
+    <div class="achievement-track"><div class="achievement" data-ach="25"><i></i><span>25%</span></div><div class="achievement" data-ach="50"><i></i><span>50%</span></div><div class="achievement" data-ach="75"><i></i><span>75%</span></div><div class="achievement" data-ach="100"><i></i><span>100%</span></div></div>
+    <div class="climb-scene" aria-label="นักปีนเขากำลังเดินทางสู่เป้าหมาย"><svg viewBox="0 0 520 230" role="img" aria-hidden="true"><defs><linearGradient id="peakA" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#8bc2f4"/><stop offset="1" stop-color="#4f9de8"/></linearGradient><linearGradient id="peakB" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#5ba6ee"/><stop offset="1" stop-color="#347fd4"/></linearGradient></defs><path d="M0 190 L88 122 L155 177 L226 100 L294 166 L365 30 L520 195 L520 230 L0 230Z" fill="#e6edf6"/><path d="M105 230 L365 30 L520 230Z" fill="url(#peakB)"/><path d="M105 230 L365 30 L422 230Z" fill="url(#peakA)"/><path d="M365 30 L382 50 L366 47 L350 55Z" fill="#fff" opacity=".95"/><path d="M164 198 Q215 170 245 145 T310 92 T365 40" fill="none" stroke="#fff" stroke-width="3" stroke-dasharray="6 8" opacity=".9"/><g fill="#fff" stroke="#5a9fe4" stroke-width="3"><circle cx="192" cy="183" r="8"/><circle cx="242" cy="145" r="8"/><circle cx="293" cy="101" r="8"/><circle cx="340" cy="57" r="8"/></g><path d="M365 30 V5" stroke="#71869a" stroke-width="3"/><path d="M366 6 L393 13 L366 21Z" fill="#35b77a"/><g class="climber" transform="translate(0 0)"><ellipse cx="238" cy="167" rx="17" ry="7" fill="#244e79" opacity=".15"/><path d="M226 169 L214 181" stroke="#244e79" stroke-width="7" stroke-linecap="round"/><path d="M246 169 L258 180" stroke="#244e79" stroke-width="7" stroke-linecap="round"/><path d="M228 145 Q238 133 249 145 L253 165 L225 165Z" fill="#f3a45d" stroke="#fff" stroke-width="2"/><path d="M224 149 L215 159 M249 149 L260 143" stroke="#e9a06a" stroke-width="6" stroke-linecap="round"/><rect x="248" y="143" width="10" height="17" rx="4" fill="#3c6f9c"/><circle cx="238" cy="134" r="12" fill="#f2c7a5" stroke="#fff" stroke-width="2"/><path d="M227 132 Q230 117 243 122 Q251 124 250 134 Q241 128 227 132" fill="#42566a"/><circle cx="234" cy="135" r="1.5" fill="#304252"/><circle cx="243" cy="135" r="1.5" fill="#304252"/><path d="M235 140 Q239 143 243 140" fill="none" stroke="#bd7865" stroke-width="1.5" stroke-linecap="round"/><path d="M227 129 Q238 120 248 130" fill="none" stroke="#42627c" stroke-width="4" stroke-linecap="round"/></g><g fill="#fff" opacity=".8"><ellipse cx="82" cy="50" rx="28" ry="10"/><ellipse cx="98" cy="45" rx="17" ry="9"/><ellipse cx="456" cy="88" rx="24" ry="8"/></g></svg><div class="climb-caption">ทุกก้าวเข้าใกล้เป้าหมาย</div></div>
+    <div class="goal-settings"><input id="monthlyGoalInput" type="number" min="0" placeholder="เป้ารายเดือน"><input id="yearlyGoalInput" type="number" min="0" placeholder="เป้ารายปี"><button class="btn" onclick="saveGoals()">บันทึก</button></div>
+   </section>
+   <section class="card annual-chart"><div class="section-head"><div><h2>รายรับ – รายจ่ายทั้งปี</h2><p>แตะชื่อเดือนเพื่อดูข้อมูลของเดือนนั้น</p></div><div class="chart-legend"><span><i class="legend-dot" style="background:#6f9b80"></i>รายรับ</span><span><i class="legend-dot" style="background:#d5a16d"></i>รายจ่าย</span></div></div><div class="month-bars-list" id="annualBars"></div></section>
+  </div>
+  <div class="grid two dashboard-lower">
+   <div class="card"><div class="section-head"><div><h2>รายจ่ายล่าสุด</h2><p>รายการบันทึกค่าใช้จ่ายล่าสุด</p></div><button class="btn secondary" onclick="showPage('expenses')">ดูทั้งหมด</button></div><div class="table-wrap"><table><thead><tr><th>รายการ</th><th>วันที่</th><th>ยอดเงิน</th></tr></thead><tbody id="recentExpenses"></tbody></table></div></div>
+   <div class="card"><div class="section-head"><div><h2>บริการยอดนิยม</h2><p id="bestSellerCaption">อันดับบริการจากจำนวนการจอง</p></div><span class="pill">Top 4</span></div><div id="bestSellerList" class="lineup"></div></div>
+  </div>
+  <div class="card pending-card"><div class="section-head"><div><h2>รายการค้างชำระ</h2><p>ลูกค้าจองแล้ว แต่ยังไม่ได้ชำระเงิน</p></div><span class="pill pending" id="pendingCount">0 รายการ</span></div><div id="pendingList"></div></div>
+ </section>
+ <section class="page" id="page-bookings">
+  <div class="section-head"><div><h2>ตารางจองคิวและงานประจำวัน</h2><p>บันทึกการจองไว้ก่อนได้ รายรับจะเข้าบัญชีเมื่อกด “จ่ายครบแล้ว” เท่านั้น</p></div></div>
+  <div class="period-toolbar card page-period compact" id="bookingPeriodToolbar"><div><div class="period-caption">ช่วงเวลาที่แสดง</div><div class="period-current" id="bookingPeriodLabel"></div><div class="period-note" id="bookingPeriodSummary"></div></div><div class="period-actions"><div class="period-nav"><button class="btn ghost period-arrow" onclick="shiftPeriod(-1)" aria-label="ช่วงก่อนหน้า">‹</button><button class="btn ghost period-arrow" onclick="shiftPeriod(1)" aria-label="ช่วงถัดไป">›</button></div><div class="period-switch"><button id="bookingMonthMode" onclick="setPeriodMode('month')">รายเดือน</button><button id="bookingYearMode" onclick="setPeriodMode('year')">รายปี</button></div></div></div>
+  <section class="card booking-calendar-card"><div class="calendar-heading"><div><h2>ปฏิทินการจอง</h2><p>วันที่มีคิวจะแสดงจุดสีแดง</p></div><div class="calendar-month" id="bookingCalendarTitle"></div></div><div class="calendar-weekdays"><span>อา.</span><span>จ.</span><span>อ.</span><span>พ.</span><span>พฤ.</span><span>ศ.</span><span>ส.</span></div><div class="calendar-grid" id="bookingCalendar"></div></section>
+  <section class="card day-availability"><div class="section-head"><div><h2 id="selectedDayTitle">ตารางเวลาว่าง</h2><p>ร้านเปิด 09:00–20:00 น. แตะวันที่ในปฏิทินเพื่อดูคิวและช่วงเวลาว่าง</p></div><span class="pill" id="dayBookingCount">0 คิว</span></div><div id="daySchedule"></div></section>
+  <div class="grid stats page-stats">
+   <div class="card"><div class="stat-label">จำนวนรายการจอง</div><div class="stat-value" id="bookingCount">0</div><div class="stat-foot">ในช่วงเวลาที่เลือก</div></div>
+   <div class="card"><div class="stat-label">รายรับรวม</div><div class="stat-value positive" id="bookingIncomeTotal">฿0</div><div class="stat-foot">ไม่รวมรายการยกเลิก</div></div>
+   <div class="card"><div class="stat-label">เสร็จสิ้น</div><div class="stat-value" id="bookingDoneCount">0</div><div class="stat-foot">คิวที่ให้บริการแล้ว</div></div>
+   <div class="card"><div class="stat-label">ยกเลิก</div><div class="stat-value negative" id="bookingCancelledCount">0</div><div class="stat-foot">คิวที่ถูกยกเลิก</div></div>
+  </div>
+  <div class="card"><div class="section-head"><div><h2>รายการจองในช่วงเวลาที่เลือก</h2><p>เรียงตามวันและเวลา</p></div><div style="display:flex;gap:8px;align-items:center"><span class="pill" id="bookingPeriodTag"></span><button class="btn" onclick="openBooking()">＋ เพิ่มการจอง</button></div></div><div class="lineup" id="bookingList"></div></div>
+ </section>
+ <section class="page" id="page-expenses">
+  <div class="section-head"><div><h2>จัดการรายจ่าย</h2><p>บันทึกค่าใช้จ่ายประจำและค่าใช้จ่ายอื่น ๆ</p></div><button class="btn" onclick="openExpense()">＋ เพิ่มรายจ่าย</button></div>
+  <div class="notice">เงินเดือนพนักงานและค่าพนักงานพาร์ตไทม์จะมีตัวเลือกกำหนดค่าคอมมิชชันในรายการเดียวกัน สามารถเลือกไม่มีค่าคอมมิชชันหรือกำหนดเปอร์เซ็นต์ได้</div>
+  <div class="period-toolbar card page-period compact" id="expensePeriodToolbar"><div><div class="period-caption">ช่วงเวลาที่แสดง</div><div class="period-current" id="expensePeriodLabel"></div><div class="period-note" id="expensePeriodSummary"></div></div><div class="period-actions"><div class="period-nav"><button class="btn ghost period-arrow" onclick="shiftPeriod(-1)" aria-label="ช่วงก่อนหน้า">‹</button><button class="btn ghost period-arrow" onclick="shiftPeriod(1)" aria-label="ช่วงถัดไป">›</button></div><div class="period-switch"><button id="expenseMonthMode" onclick="setPeriodMode('month')">รายเดือน</button><button id="expenseYearMode" onclick="setPeriodMode('year')">รายปี</button></div></div></div>
+  <div class="grid stats page-stats">
+   <div class="card"><div class="stat-label">รายจ่ายรวมทั้งหมด</div><div class="stat-value negative" id="expenseTotal">฿0</div><div class="stat-foot">รวมเงินเจ้าของเบิก</div></div>
+   <div class="card"><div class="stat-label">ค่าใช้จ่ายดำเนินงาน</div><div class="stat-value" id="expenseOperating">฿0</div><div class="stat-foot">ไม่รวมเจ้าของเบิก</div></div>
+   <div class="card"><div class="stat-label">เจ้าของเบิก</div><div class="stat-value" id="expenseOwner">฿0</div><div class="stat-foot">เงินออกจากบัญชี</div></div>
+   <div class="card"><div class="stat-label">จำนวนรายการ</div><div class="stat-value" id="expenseCount">0</div><div class="stat-foot">ในช่วงเวลาที่เลือก</div></div>
+  </div>
+  <div class="card"><div class="section-head"><div><h2>รายการรายจ่ายในช่วงเวลาที่เลือก</h2><p>เรียงจากรายการล่าสุด</p></div><span class="pill" id="expensePeriodTag"></span></div><div class="table-wrap"><table><thead><tr><th>วันที่</th><th>รายการ</th><th>รายละเอียด</th><th>ยอดเงิน</th><th></th></tr></thead><tbody id="expenseRows"></tbody></table></div></div>
+ </section>
+ <section class="page" id="page-services">
+  <div class="section-head"><div><h2>รายการบริการ</h2><p>ตั้งค่าชื่อบริการ ราคา และระยะเวลา</p></div><button class="btn" onclick="openService()">＋ เพิ่มบริการ</button></div>
+  <div class="grid service-grid" id="serviceGrid"></div>
+ </section>
+ <section class="page" id="page-settings">
+  <div class="section-head"><div><h2>ตั้งค่าระบบ</h2><p>จัดการข้อมูลและสำรองข้อมูลธุรกิจ</p></div></div>
+  <div class="grid settings-grid">
+   <div class="card"><h2 style="font-size:16px;margin:0 0 8px">ยอดเงินตั้งต้นในบัญชี</h2><p class="stat-foot" style="line-height:1.6">กรอกยอดเงินในบัญชีก่อนเริ่มใช้ระบบ ยอดคงเหลือหน้าแรกจะคำนวณจากยอดนี้รวมกับรายรับและรายจ่ายที่บันทึกไว้</p><div class="field"><label>ยอดเงินตั้งต้น (บาท)</label><input id="openingBalanceInput" type="number" min="0" step="0.01" placeholder="0"></div><button class="btn" onclick="saveOpeningBalance()">บันทึกยอดตั้งต้น</button></div>
+   <div class="card"><h2 style="font-size:16px;margin:0 0 8px">สำรองข้อมูล</h2><p class="stat-foot" style="line-height:1.6">ดาวน์โหลดข้อมูลทั้งหมดเป็นไฟล์ JSON เพื่อเก็บสำรองหรือย้ายอุปกรณ์</p><button class="btn" onclick="backupData()">↓ ดาวน์โหลด Backup JSON</button></div>
+   <div class="card"><h2 style="font-size:16px;margin:0 0 8px">กู้คืนข้อมูล</h2><p class="stat-foot" style="line-height:1.6">นำเข้าไฟล์ Backup JSON ที่เคยดาวน์โหลดไว้ ข้อมูลปัจจุบันจะถูกแทนที่</p><label class="btn secondary file-btn">↑ เลือกไฟล์ JSON<input type="file" accept="application/json" hidden onchange="restoreData(event)"></label></div>
+   <div class="card"><h2 style="font-size:16px;margin:0 0 8px">ส่งออกรายจ่าย CSV</h2><p class="stat-foot" style="line-height:1.6">ดาวน์โหลดรายการรายจ่ายเพื่อเปิดใน Excel หรือ Google Sheets</p><button class="btn secondary" onclick="exportExpenses()">↓ Export CSV</button></div>
+   <div class="card"><h2 style="font-size:16px;margin:0 0 8px">ข้อมูลในแอป</h2><p class="stat-foot" id="dataSummary" style="line-height:1.8"></p><button class="btn danger" onclick="clearAllData()">ล้างข้อมูลทั้งหมด</button></div>
+  </div>
+ </section>
+</main>
+</div>
+<div class="modal" id="bookingModal"><div class="modal-box"><div class="modal-head"><h3>เพิ่มรายการจองคิว</h3><button class="close" onclick="closeModal('bookingModal')">×</button></div>
+ <form id="bookingForm"><div class="form-grid">
+  <div class="field"><label>ชื่อลูกค้า *</label><input name="customer" required placeholder="ชื่อลูกค้า"></div>
+  <div class="field"><label>เบอร์โทรศัพท์</label><input name="phone" placeholder="เบอร์โทร"></div>
+  <div class="field"><label>วันที่ *</label><input name="date" type="date" required></div>
+  <div class="field"><label>เวลาเริ่ม *</label><input name="time" id="bookingStartTime" type="time" min="09:00" max="19:59" step="60" required></div><div class="field"><label>เวลาสิ้นสุด *</label><input name="endTime" id="bookingEndTime" type="time" min="09:01" max="20:00" step="60" required></div>
+  <div class="field"><label>บริการ *</label><select name="service" id="bookingService" required></select><small class="field-hint" id="bookingDurationHint">เลือกระยะเวลาบริการเพื่อช่วยกำหนดเวลาสิ้นสุด</small></div>
+  <div class="field"><label>ราคาบริการ (บาท) *</label><input name="amount" type="number" min="0" step="0.01" required></div>
+  <div class="field"><label>พนักงาน</label><input name="staff" placeholder="ชื่อพนักงาน"></div>
+  <div class="field"><label>สถานะคิว</label><select name="status"><option>จองแล้ว</option><option>กำลังให้บริการ</option><option>เสร็จสิ้น</option><option>ยกเลิก</option></select></div>
+  <div class="field span2"><label>หมายเหตุ</label><input name="note" placeholder="รายละเอียดเพิ่มเติม (ถ้ามี)"></div>
+ </div><div class="actions"><button type="button" class="btn ghost" onclick="closeModal('bookingModal')">ยกเลิก</button><button class="btn" type="submit">บันทึกการจอง</button></div></form>
+ </div></div>
+<div class="modal" id="expenseModal"><div class="modal-box"><div class="modal-head"><h3>เพิ่มรายการรายจ่าย</h3><button class="close" onclick="closeModal('expenseModal')">×</button></div>
+ <form id="expenseForm"><div class="form-grid">
+  <div class="field"><label>วันที่ *</label><input name="date" type="date" required></div>
+  <div class="field"><label>หมวดหมู่ *</label><select name="category" id="expenseCategory" required onchange="toggleCommission()"></select></div>
+  <div class="field"><label>รายละเอียด</label><input name="detail" placeholder="เช่น เงินเดือนเดือนพฤศจิกายน"></div>
+  <div class="field"><label>จำนวนเงิน (บาท) *</label><input name="amount" type="number" min="0" step="0.01" required></div>
+  <div class="field hidden" id="commissionField"><label>ค่าคอมมิชชัน</label><select name="commission" onchange="updateCommissionPreview()"><option value="0">ไม่มีค่าคอมมิชชัน</option><option value="5">5%</option><option value="10">10%</option><option value="15">15%</option><option value="20">20%</option><option value="25">25%</option><option value="30">30%</option><option value="35">35%</option><option value="40">40%</option><option value="50">50%</option></select></div>
+  <div class="commission-preview hidden" id="commissionPreview">เงินต้น <b id="commissionBase">฿0.00</b> + คอมมิชชัน <b id="commissionExtra">฿0.00</b><br>ยอดที่ต้องจ่ายพนักงาน <strong id="commissionTotal">฿0.00</strong></div>
+  <div class="field"><label>หมายเหตุ</label><input name="note" placeholder="หมายเหตุ (ถ้ามี)"></div>
+ </div><div class="actions"><button type="button" class="btn ghost" onclick="closeModal('expenseModal')">ยกเลิก</button><button class="btn" type="submit">บันทึกรายจ่าย</button></div></form>
+ </div></div>
+<div class="modal" id="serviceModal"><div class="modal-box"><div class="modal-head"><h3>เพิ่มบริการ</h3><button class="close" onclick="closeModal('serviceModal')">×</button></div>
+ <form id="serviceForm"><div class="form-grid"><div class="field span2"><label>ชื่อบริการ *</label><input name="name" required placeholder="เช่น นวดไทย"></div><div class="field"><label>ราคา (บาท) *</label><input name="price" type="number" min="0" required></div><div class="field"><label>ระยะเวลา (นาที)</label><input name="duration" type="number" min="0" value="60"></div></div><div class="actions"><button type="button" class="btn ghost" onclick="closeModal('serviceModal')">ยกเลิก</button><button class="btn">บันทึกบริการ</button></div></form>
+ </div></div>
+<script>
+const KEY='spa.manager.v1';
+const expenseCategories=['ค่าเช่า','ค่าน้ำ','ค่าไฟฟ้า','เงินเดือนพนักงาน','ค่าน้ำยา / ครีม','ค่าอุปกรณ์','ค่าขนมลูกค้า','ค่าอาหารพนักงาน','ค่าพนักงานพาร์ตไทม์','ค่าอินเทอร์เน็ต','ค่าโฆษณา','ค่าแม่บ้านทำความสะอาด','ค่าน้ำยาซักผ้า','เจ้าของเบิก','ค่าโทรศัพท์','อื่น ๆ'];
+const defaultServices=[{id:1,name:'นวดไทย',price:400,duration:60},{id:2,name:'นวดน้ำมัน',price:700,duration:60},{id:3,name:'นวดเท้า',price:350,duration:60}];
+let data=loadData();
+function loadData(){try{const d=JSON.parse(localStorage.getItem(KEY))||{};return {bookings:Array.isArray(d.bookings)?d.bookings:[],expenses:Array.isArray(d.expenses)?d.expenses:[],services:Array.isArray(d.services)?d.services:defaultServices,openingBalance:Number(d.openingBalance)||0,monthlyGoal:Number(d.monthlyGoal)||0,yearlyGoal:Number(d.yearlyGoal)||0}}catch{return {bookings:[],expenses:[],services:defaultServices,openingBalance:0,monthlyGoal:0,yearlyGoal:0}}}
+function save(){localStorage.setItem(KEY,JSON.stringify(data));renderAll()}
+function money(n){return new Intl.NumberFormat('th-TH',{style:'currency',currency:'THB',maximumFractionDigits:2}).format(Number(n)||0)}
+function today(){return new Date().toISOString().slice(0,10)}
+function fmtDate(s){if(!s)return '-';return new Date(s+'T00:00:00').toLocaleDateString('th-TH',{day:'numeric',month:'short',year:'numeric'})}
+let selectedYear=new Date().getFullYear();
+let selectedMonth=new Date().getMonth()+1; // 1-12, 0 means full year
+let selectedBookingDate=today();
+function isInPeriod(iso){if(!iso)return false;const y=Number(String(iso).slice(0,4)),m=Number(String(iso).slice(5,7));return y===selectedYear&&(selectedMonth===0||m===selectedMonth)}
+function periodName(){return selectedMonth===0?'ปี '+(selectedYear+543):new Date(selectedYear,selectedMonth-1,1).toLocaleDateString('th-TH',{month:'long',year:'numeric'})}
+function shiftPeriod(delta){if(selectedMonth===0){selectedYear+=delta}else{const d=new Date(selectedYear,selectedMonth-1+delta,1);selectedYear=d.getFullYear();selectedMonth=d.getMonth()+1}renderPeriodViews()}
+function setPeriodMode(mode){if(mode==='year')selectedMonth=0;else if(selectedMonth===0)selectedMonth=new Date().getMonth()+1;renderPeriodViews()}
+function showPage(name){document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.getElementById('page-'+name).classList.add('active');document.querySelectorAll('.nav button').forEach(b=>b.classList.toggle('active',b.dataset.page===name));document.getElementById('pageTitle').textContent=({dashboard:'ภาพรวมธุรกิจ',bookings:'ตารางจองคิว / รายรับ',expenses:'รายจ่าย',services:'รายการบริการ',settings:'ตั้งค่าระบบ'})[name];if(name==='bookings')renderBookings();if(name==='expenses')renderExpenses()}
+document.getElementById('nav').addEventListener('click',e=>{const b=e.target.closest('button[data-page]');if(b)showPage(b.dataset.page)});
+function renderAll(){renderDashboard();renderBookings();renderExpenses();renderServices();renderSettings();populateSelects()}
+function renderPeriodViews(){renderDashboard();renderBookings();renderExpenses()}
+function renderDashboard(){
+ const bookings=data.bookings.filter(x=>isInPeriod(x.date)&&x.status!=='ยกเลิก');
+ const expenses=data.expenses.filter(x=>isInPeriod(x.date));
+ const income=bookings.filter(x=>x.paid===true).reduce((s,x)=>s+Number(x.amount||0),0);
+ const owner=expenses.filter(x=>x.category==='เจ้าของเบิก').reduce((s,x)=>s+Number(x.amount||0),0);
+ const total=expenses.filter(x=>x.category!=='เจ้าของเบิก').reduce((s,x)=>s+Number(x.amount||0),0);
+ document.getElementById('periodLabel').textContent=periodName();
+ const allIncome=data.bookings.filter(x=>x.status!=='ยกเลิก'&&x.paid===true).reduce((s,x)=>s+Number(x.amount||0),0);
+ const allExpenses=data.expenses.reduce((s,x)=>s+Number(x.amount||0),0);
+ document.getElementById('bankBalance').textContent=money(Number(data.openingBalance||0)+allIncome-allExpenses);
+ document.getElementById('monthMode').classList.toggle('active',selectedMonth!==0);
+ document.getElementById('yearMode').classList.toggle('active',selectedMonth===0);
+ const suffix=selectedMonth===0?'ในปีที่เลือก':'ในเดือนที่เลือก';
+ document.getElementById('incomeLabel').textContent='รายรับ'+suffix;
+ document.getElementById('expenseLabel').textContent='รายจ่าย'+suffix;
+ document.getElementById('profitLabel').textContent='กำไรจากการดำเนินงาน'+suffix;
+ document.getElementById('ownerLabel').textContent='เจ้าของเบิก'+suffix;
+ document.getElementById('dashIncome').textContent=money(income);
+ document.getElementById('dashExpense').textContent=money(total);
+ document.getElementById('dashProfit').textContent=money(income-total);
+ document.getElementById('dashOwner').textContent=money(owner);
+ renderGoalAndChart();
+ const re=[...expenses].sort((a,b)=>b.date.localeCompare(a.date)).slice(0,5);
+ document.getElementById('recentExpenses').innerHTML=re.length?re.map(x=>`<tr><td><b>${esc(x.category)}</b><small>${esc(x.detail||'')}</small></td><td>${fmtDate(x.date)}</td><td class="amount negative">${money(x.amount)}</td></tr>`).join(''):'<tr><td colspan="3" class="empty">ยังไม่มีรายจ่ายในช่วงนี้</td></tr>';
+ renderBestSellers();
+ const pending=data.bookings.filter(x=>isInPeriod(x.date)&&x.status!=='ยกเลิก'&&x.paid!==true).sort((a,b)=>(a.date+a.time).localeCompare(b.date+b.time));document.getElementById('pendingCount').textContent=pending.length+' รายการ';document.getElementById('pendingList').innerHTML=pending.length?pending.map(x=>`<div class="pending-item"><div><b>${esc(x.customer)}</b><div class="booking-sub">${fmtDate(x.date)} · ${esc(x.service)}</div></div><strong>${money(x.amount)}</strong></div>`).join(''):'<div class="empty">ไม่มีรายการค้างชำระ 🎉</div>';
+ syncPeriodControls();
+}
+function renderBestSellers(){const pool=data.bookings.filter(x=>isInPeriod(x.date)&&x.status!=='ยกเลิก');const counts={};pool.forEach(x=>{const name=String(x.service||'ไม่ระบุบริการ');counts[name]=(counts[name]||0)+1});const top=Object.entries(counts).sort((a,b)=>b[1]-a[1]||a[0].localeCompare(b[0])).slice(0,4);document.getElementById('bestSellerCaption').textContent=selectedMonth===0?'จัดอันดับจากจำนวนการจองทั้งปี':'จัดอันดับจากจำนวนการจองใน'+periodName();document.getElementById('bestSellerList').innerHTML=top.length?top.map(([name,count],i)=>`<div class="pending-item"><div style="display:flex;align-items:center;gap:10px"><strong style="width:28px;height:28px;border-radius:10px;background:var(--brand2);color:var(--brand);display:grid;place-items:center">${i+1}</strong><b>${esc(name)}</b></div><span class="pill">${count} ครั้ง</span></div>`).join(''):'<div class="empty">ยังไม่มีข้อมูลการจองในช่วงเวลานี้</div>'}
+function paidIncomeFor(items){return items.filter(x=>x.status!=='ยกเลิก'&&x.paid===true).reduce((t,x)=>t+Number(x.amount||0),0)}
+function renderGoalAndChart(){
+ const monthIncome=paidIncomeFor(data.bookings.filter(x=>String(x.date||'').slice(0,7)===selectedYear+'-'+String(selectedMonth||new Date().getMonth()+1).padStart(2,'0')));
+ const yearIncome=paidIncomeFor(data.bookings.filter(x=>String(x.date||'').slice(0,4)===String(selectedYear)));
+ const yearly=selectedMonth===0,earned=yearly?yearIncome:monthIncome,target=Number(yearly?data.yearlyGoal:data.monthlyGoal)||0,pct=target>0?Math.min(100,earned/target*100):0;
+ document.getElementById('goalPeriodName').textContent=yearly?'เป้าหมายประจำปี '+(selectedYear+543):'เป้าหมายประจำเดือน '+periodName();
+ document.getElementById('goalBadge').textContent=(target?Math.floor(earned/target*100):0)+'%';
+ document.getElementById('goalProgressText').textContent=money(earned)+' / '+money(target);
+ document.getElementById('goalProgressBar').style.width=pct+'%';
+ document.getElementById('goalEarnedText').textContent='ทำได้แล้ว '+money(earned);
+ document.getElementById('goalRemainText').textContent=target>earned?'เหลือ '+money(target-earned):target?'เกินเป้า '+money(earned-target):'ตั้งเป้าหมายเพื่อเริ่มติดตาม';
+ document.querySelectorAll('.achievement').forEach(el=>el.classList.toggle('reached',target>0&&earned/target*100>=Number(el.dataset.ach)));
+ const mi=document.getElementById('monthlyGoalInput'),yi=document.getElementById('yearlyGoalInput');if(mi&&document.activeElement!==mi)mi.value=Number(data.monthlyGoal)||'';if(yi&&document.activeElement!==yi)yi.value=Number(data.yearlyGoal)||'';
+ const months=['ม.ค.','ก.พ.','มี.ค.','เม.ย.','พ.ค.','มิ.ย.','ก.ค.','ส.ค.','ก.ย.','ต.ค.','พ.ย.','ธ.ค.'];
+ const rows=months.map((label,i)=>{const key=selectedYear+'-'+String(i+1).padStart(2,'0');const rev=paidIncomeFor(data.bookings.filter(x=>String(x.date||'').slice(0,7)===key));const exp=data.expenses.filter(x=>String(x.date||'').slice(0,7)===key).reduce((t,x)=>t+Number(x.amount||0),0);return {label,rev,exp,month:i+1}});
+ const max=Math.max(1,...rows.flatMap(x=>[x.rev,x.exp]));document.getElementById('annualBars').innerHTML=rows.map(r=>`<button class="month-column ${selectedMonth===r.month?'selected':''}" onclick="pickChartMonth(${r.month})" title="${r.label} · รายรับ ${money(r.rev)} บาท · รายจ่าย ${money(r.exp)} บาท"><span class="column-values"><i>${shortMoney(r.rev)}</i><i>${shortMoney(r.exp)}</i></span><span class="column-plot"><span class="column-bar income" style="height:${Math.max(r.rev?3:0,r.rev/max*100)}%"></span><span class="column-bar expense" style="height:${Math.max(r.exp?3:0,r.exp/max*100)}%"></span></span><span class="column-label">${r.label}</span></button>`).join('');
+}
+function shortMoney(n){n=Number(n)||0;return n>=1000000?(n/1000000).toFixed(1)+'ล.':n>=1000?(n/1000).toFixed(1)+'k':Math.round(n).toLocaleString('th-TH')}
+function pickChartMonth(m){selectedMonth=m;renderPeriodViews();window.scrollTo({top:0,behavior:'smooth'})}
+function saveGoals(){const m=Math.max(0,Number(document.getElementById('monthlyGoalInput').value)||0),y=Math.max(0,Number(document.getElementById('yearlyGoalInput').value)||0);data.monthlyGoal=m;data.yearlyGoal=y;save();alert('บันทึกเป้าหมายเรียบร้อยแล้ว')}
+function applyTheme(){const dark=localStorage.getItem('spa.manager.theme')==='dark';document.body.classList.toggle('dark',dark);document.getElementById('themeIcon').textContent=dark?'☾':'☀';document.getElementById('themeText').textContent=dark?'โหมดกลางคืน':'โหมดปกติ';document.getElementById('themeToggle').setAttribute('aria-label',dark?'เปลี่ยนเป็นโหมดปกติ':'เปลี่ยนเป็นโหมดกลางคืน');}
+function toggleTheme(){const next=document.body.classList.contains('dark')?'light':'dark';localStorage.setItem('spa.manager.theme',next);applyTheme()}
+function syncPeriodControls(){
+ const ids=['booking','expense'];
+ ids.forEach(prefix=>{const label=document.getElementById(prefix+'PeriodLabel');if(label)label.textContent=periodName();const summary=document.getElementById(prefix+'PeriodSummary');if(summary)summary.textContent=selectedMonth===0?'ข้อมูลตลอดทั้งปีที่เลือก':'ข้อมูลเฉพาะเดือนที่เลือก';const m=document.getElementById(prefix+'MonthMode'),y=document.getElementById(prefix+'YearMode');if(m)m.classList.toggle('active',selectedMonth!==0);if(y)y.classList.toggle('active',selectedMonth===0)});
+}
+function renderBookingCalendar(){
+ const month=selectedMonth===0?new Date().getMonth()+1:selectedMonth;
+ const year=selectedYear;
+ const first=new Date(year,month-1,1).getDay();
+ const days=new Date(year,month,0).getDate();
+ const counts={};
+ data.bookings.filter(x=>String(x.date||'').slice(0,7)===year+'-'+String(month).padStart(2,'0')&&x.status!=='ยกเลิก').forEach(x=>{const d=Number(String(x.date).slice(8,10));counts[d]=(counts[d]||0)+1});
+ document.getElementById('bookingCalendarTitle').textContent=new Date(year,month-1,1).toLocaleDateString('th-TH',{month:'long',year:'numeric'});
+ const cells=[];for(let i=0;i<first;i++)cells.push('<span class="calendar-day blank"></span>');
+ for(let d=1;d<=days;d++){const has=!!counts[d],todayFlag=(year===new Date().getFullYear()&&month===new Date().getMonth()+1&&d===new Date().getDate()),iso=year+'-'+String(month).padStart(2,'0')+'-'+String(d).padStart(2,'0');cells.push(`<button type="button" class="calendar-day ${has?'has-booking':''} ${todayFlag?'is-today':''} ${selectedBookingDate===iso?'selected':''}" onclick="selectBookingDay('${iso}')" title="${has?counts[d]+' คิว':'ไม่มีคิว'}"><b>${d}</b>${has?'<i></i>':''}</button>`)}
+ document.getElementById('bookingCalendar').innerHTML=cells.join('');
+}
+function selectBookingDay(iso){selectedBookingDate=iso;const y=Number(iso.slice(0,4)),m=Number(iso.slice(5,7));selectedYear=y;selectedMonth=m;renderPeriodViews();}
+function toMinutes(t){if(!t||!/^\d{2}:\d{2}$/.test(t))return 0;const [h,m]=t.split(':').map(Number);return h*60+m}
+function fromMinutes(n){return String(Math.floor(n/60)).padStart(2,'0')+':'+String(n%60).padStart(2,'0')}
+function addMinutes(t,n){return fromMinutes(toMinutes(t)+Number(n||0))}
+function overlap(a,b,c,d){return a<d&&c<b}
+function legacyDuration(x){const svc=data.services.find(s=>s.name===x.service);return Number(svc?.duration)||60}
+function renderDaySchedule(){
+ const date=selectedBookingDate||today(),rows=data.bookings.filter(x=>x.date===date&&x.status!=='ยกเลิก').sort((a,b)=>toMinutes(a.time)-toMinutes(b.time));
+ const label=fmtDate(date);document.getElementById('selectedDayTitle').textContent='ตารางคิววันที่ '+label;document.getElementById('dayBookingCount').textContent=rows.length+' คิว';
+ const bookings=rows.length?`<div class="schedule-bookings">${rows.map(x=>`<div class="schedule-booking"><div><b>${esc(x.time||'--:--')}–${esc(x.endTime||addMinutes(x.time||'09:00',legacyDuration(x)))}</b><br>${esc(x.customer)} · ${esc(x.service)}<br><small>${esc(x.staff||'ยังไม่ระบุพนักงาน')}</small></div><strong>${money(x.amount)}</strong></div>`).join('')}</div>`:'<div class="empty" style="margin-top:12px">วันนี้ยังไม่มีรายการจอง</div>';
+ document.getElementById('daySchedule').innerHTML=bookings;
+}
+function renderBookings(){
+ renderBookingCalendar();renderDaySchedule();
+ const rows=[...data.bookings].filter(x=>isInPeriod(x.date)).sort((a,b)=>(a.date+a.time).localeCompare(b.date+b.time));
+ const valid=rows.filter(x=>x.status!=='ยกเลิก');
+ const income=valid.filter(x=>x.paid===true).reduce((s,x)=>s+Number(x.amount||0),0);
+ document.getElementById('bookingCount').textContent=rows.length+' รายการ';
+ document.getElementById('bookingIncomeTotal').textContent=money(income);
+ document.getElementById('bookingDoneCount').textContent=rows.filter(x=>x.paid===true).length+' จ่ายแล้ว';
+ document.getElementById('bookingCancelledCount').textContent=rows.filter(x=>x.status==='ยกเลิก').length+' คิว';
+ document.getElementById('bookingPeriodTag').textContent=periodName();
+ document.getElementById('bookingList').innerHTML=rows.length?rows.map(x=>`<div class="booking-row"><div class="booking-time">${esc(x.time||'--:--')}–${esc(x.endTime||addMinutes(x.time||'09:00',legacyDuration(x)))}<small>${fmtDate(x.date)}</small></div><div><div class="booking-title">${esc(x.customer)} <span class="pill ${x.status==='ยกเลิก'?'red':x.status==='เสร็จสิ้น'?'':'gold'}">${esc(x.status)}</span> <span class="pill ${x.paid===true?'':'pending'}">${x.paid===true?'ชำระแล้ว':'ค้างชำระ'}</span></div><div class="booking-sub">${esc(x.service)} · ${esc(x.staff||'ยังไม่ระบุพนักงาน')}${x.phone?' · '+esc(x.phone):''}</div>${x.note?`<div class="booking-sub">${esc(x.note)}</div>`:''}</div><div class="booking-side"><strong>${money(x.amount)}</strong>${x.status!=='ยกเลิก'&&x.paid!==true?`<button class="btn paid-action" onclick="markBookingPaid(${x.id})">จ่ายครบแล้ว</button>`:''}<button class="btn ghost" onclick="deleteBooking(${x.id})">ลบ</button></div></div>`).join(''):'<div class="empty">ยังไม่มีรายการจองในช่วงเวลาที่เลือก</div>';
+ syncPeriodControls();
+}
+function clearBookingFilter(){renderBookings()}
+function renderExpenses(){
+ const rows=[...data.expenses].filter(x=>isInPeriod(x.date)).sort((a,b)=>b.date.localeCompare(a.date));
+ const total=rows.reduce((s,x)=>s+Number(x.amount||0),0);
+ const owner=rows.filter(x=>x.category==='เจ้าของเบิก').reduce((s,x)=>s+Number(x.amount||0),0);
+ document.getElementById('expenseTotal').textContent=money(total);
+ document.getElementById('expenseOperating').textContent=money(total-owner);
+ document.getElementById('expenseOwner').textContent=money(owner);
+ document.getElementById('expenseCount').textContent=rows.length+' รายการ';
+ document.getElementById('expensePeriodTag').textContent=periodName();
+ document.getElementById('expenseRows').innerHTML=rows.length?rows.map(x=>`<tr><td>${fmtDate(x.date)}</td><td><span class="expense-name"><span class="expense-icon">${expenseIcon(x.category)}</span>${esc(x.category==='ค่าไฟ'?'ค่าไฟฟ้า':x.category)}</span></td><td>${esc(x.detail||'-')}${x.commission?`<small>ฐาน ${money(x.baseAmount??(Number(x.amount)/(1+Number(x.commission)/100)))} · คอมมิชชัน ${x.commission}% (${money(x.commissionAmount??(Number(x.amount)-Number(x.baseAmount??(Number(x.amount)/(1+Number(x.commission)/100)))) )})</small>`:''}</td><td class="amount negative">${money(x.amount)}</td><td><button class="btn ghost" onclick="deleteExpense(${x.id})">ลบ</button></td></tr>`).join(''):'<tr><td colspan="5" class="empty">ยังไม่มีรายการรายจ่ายในช่วงเวลาที่เลือก</td></tr>';
+ syncPeriodControls();
+}
+function renderServices(){document.getElementById('serviceGrid').innerHTML=data.services.length?data.services.map(x=>`<div class="card service-card"><h3>${esc(x.name)}</h3><p>ระยะเวลา ${Number(x.duration)||0} นาที</p><div class="service-price">${money(x.price)}</div><div style="margin-top:14px"><button class="btn ghost" onclick="deleteService(${x.id})">ลบบริการ</button></div></div>`).join(''):'<div class="card empty">ยังไม่มีบริการ</div>'}
+function renderSettings(){document.getElementById('dataSummary').innerHTML=`รายการจอง: ${data.bookings.length}<br>รายการรายจ่าย: ${data.expenses.length}<br>รายการบริการ: ${data.services.length}`;const input=document.getElementById('openingBalanceInput');if(input&&document.activeElement!==input)input.value=Number(data.openingBalance||0)}
+function saveOpeningBalance(){const v=Number(document.getElementById('openingBalanceInput').value);if(!Number.isFinite(v)||v<0){alert('กรุณากรอกยอดเงินตั้งต้นให้ถูกต้อง');return}data.openingBalance=v;save();alert('บันทึกยอดเงินตั้งต้นแล้ว')}
+function populateSelects(){document.getElementById('expenseCategory').innerHTML=expenseCategories.map(x=>`<option>${x}</option>`).join('');document.getElementById('bookingService').innerHTML='<option value="">เลือกบริการ</option>'+data.services.map(x=>`<option value="${esc(x.name)}" data-price="${x.price}">${esc(x.name)} — ${money(x.price)}</option>`).join('')}
+function openBooking(){const f=document.getElementById('bookingForm');f.reset();f.date.value=selectedBookingDate||today();f.time.value='10:00';f.endTime.value='11:00';document.getElementById('bookingDurationHint').textContent='ร้านเปิด 09:00–20:00 น. เลือกเวลาเริ่มและสิ้นสุดได้';document.getElementById('bookingModal').classList.add('show')}
+function openExpense(){const f=document.getElementById('expenseForm');f.reset();f.date.value=today();toggleCommission();document.getElementById('expenseModal').classList.add('show')}
+function openService(){document.getElementById('serviceForm').reset();document.getElementById('serviceModal').classList.add('show')}
+function closeModal(id){document.getElementById(id).classList.remove('show')}
+function toggleCommission(){const c=document.getElementById('expenseCategory').value;const show=['เงินเดือนพนักงาน','ค่าพนักงานพาร์ตไทม์'].includes(c);document.getElementById('commissionField').classList.toggle('hidden',!show);document.getElementById('commissionPreview').classList.toggle('hidden',!show);const sel=document.querySelector('#expenseForm [name=commission]');if(c==='ค่าพนักงานพาร์ตไทม์'&&sel.value==='0')sel.value='30';if(c==='เงินเดือนพนักงาน'&&sel.value==='30')sel.value='10';updateCommissionPreview()}
+function updateCommissionPreview(){const f=document.getElementById('expenseForm');const base=Number(f.amount.value)||0,pct=Number(f.commission.value)||0,extra=base*pct/100;document.getElementById('commissionBase').textContent=money(base);document.getElementById('commissionExtra').textContent=money(extra);document.getElementById('commissionTotal').textContent=money(base+extra)}
+function expenseIcon(c){return ({'ค่าเช่า':'🏠','ค่าน้ำ':'💧','ค่าไฟฟ้า':'⚡','ค่าไฟ':'⚡','เงินเดือนพนักงาน':'👩‍💼','ค่าน้ำยา / ครีม':'🧴','ค่าอุปกรณ์':'💨','ค่าขนมลูกค้า':'🍪','ค่าอาหารพนักงาน':'🍱','ค่าพนักงานพาร์ตไทม์':'🧑‍🔧','ค่าอินเทอร์เน็ต':'📶','ค่าโฆษณา':'📣','ค่าแม่บ้านทำความสะอาด':'🧹','ค่าน้ำยาซักผ้า':'🫧','เจ้าของเบิก':'👛','ค่าโทรศัพท์':'📱','อื่น ๆ':'🧾'})[c]||'🧾'}
+function markBookingPaid(id){const b=data.bookings.find(x=>x.id===id);if(!b||b.status==='ยกเลิก'||b.paid===true)return;if(confirm('ยืนยันว่าลูกค้าชำระเงินครบ '+money(b.amount)+' แล้วใช่หรือไม่?')){b.paid=true;b.paidAt=today();save()}}
+document.querySelector('#expenseForm [name=amount]').addEventListener('input',updateCommissionPreview);
+
+document.getElementById('bookingForm').date.addEventListener('change',e=>{selectedBookingDate=e.target.value});
+document.getElementById('bookingStartTime').addEventListener('change',e=>{const end=document.getElementById('bookingEndTime');if(toMinutes(end.value)<=toMinutes(e.target.value))end.value=addMinutes(e.target.value,60);end.min=addMinutes(e.target.value,1)});
+document.getElementById('bookingEndTime').addEventListener('change',e=>{if(toMinutes(e.target.value)>1200)e.target.value='20:00'});
+document.getElementById('bookingService').addEventListener('change',e=>{const opt=e.target.selectedOptions[0];if(opt&&opt.dataset.price)document.querySelector('#bookingForm [name=amount]').value=opt.dataset.price;if(opt&&opt.value){const svc=data.services.find(x=>x.name===opt.value);if(svc&&svc.duration){const start=document.getElementById('bookingStartTime').value||'10:00';document.getElementById('bookingEndTime').value=addMinutes(start,Number(svc.duration));document.getElementById('bookingDurationHint').textContent='ระยะเวลาบริการ '+svc.duration+' นาที · สามารถปรับเวลาสิ้นสุดได้';}}});
+document.getElementById('bookingForm').addEventListener('submit',e=>{e.preventDefault();const f=e.target;const v=Object.fromEntries(new FormData(f));const start=toMinutes(v.time),end=toMinutes(v.endTime);if(start<540||end>1200||end<=start){alert('เวลาจองต้องอยู่ระหว่าง 09:00–20:00 และเวลาสิ้นสุดต้องหลังเวลาเริ่ม');return}const conflict=data.bookings.find(x=>x.date===v.date&&x.status!=='ยกเลิก'&&overlap(start,end,toMinutes(x.time||'09:00'),toMinutes(x.endTime||addMinutes(x.time||'09:00',legacyDuration(x)))));if(conflict){alert('ช่วงเวลานี้มีการจองแล้ว ('+(conflict.time||'')+'–'+(conflict.endTime||addMinutes(conflict.time||'09:00',legacyDuration(conflict)))+') กรุณาเลือกเวลาอื่น');return}data.bookings.push({id:Date.now(),...v,amount:Number(v.amount),status:v.status||'จองแล้ว',paid:false});selectedBookingDate=v.date;save();closeModal('bookingModal');f.reset()});
+document.getElementById('expenseForm').addEventListener('submit',e=>{e.preventDefault();const f=e.target;const v=Object.fromEntries(new FormData(f));const pct=['เงินเดือนพนักงาน','ค่าพนักงานพาร์ตไทม์'].includes(v.category)?Number(v.commission):0;const base=Number(v.amount),extra=base*pct/100;data.expenses.push({id:Date.now(),...v,baseAmount:base,commission:pct,commissionAmount:extra,amount:base+extra});save();closeModal('expenseModal');f.reset();toggleCommission()});
+document.getElementById('serviceForm').addEventListener('submit',e=>{e.preventDefault();const v=Object.fromEntries(new FormData(e.target));data.services.push({id:Date.now(),name:v.name,price:Number(v.price),duration:Number(v.duration)});save();closeModal('serviceModal')});
+function deleteBooking(id){if(confirm('ลบรายการจองนี้หรือไม่?')){data.bookings=data.bookings.filter(x=>x.id!==id);save()}}
+function deleteExpense(id){if(confirm('ลบรายการรายจ่ายนี้หรือไม่?')){data.expenses=data.expenses.filter(x=>x.id!==id);save()}}
+function deleteService(id){if(confirm('ลบบริการนี้หรือไม่?')){data.services=data.services.filter(x=>x.id!==id);save()}}
+function backupData(){download('spa-manager-backup.json',JSON.stringify(data,null,2),'application/json')}
+function restoreData(e){const file=e.target.files[0];if(!file)return;const r=new FileReader();r.onload=()=>{try{const d=JSON.parse(r.result);if(!Array.isArray(d.bookings)||!Array.isArray(d.expenses)||!Array.isArray(d.services))throw Error();if(confirm('นำเข้าข้อมูลและแทนที่ข้อมูลปัจจุบันหรือไม่?')){data={bookings:d.bookings,expenses:d.expenses,services:d.services,openingBalance:Number(d.openingBalance)||0,monthlyGoal:Number(d.monthlyGoal)||0,yearlyGoal:Number(d.yearlyGoal)||0};save();alert('นำเข้าข้อมูลเรียบร้อย')}}catch{alert('ไฟล์ไม่ถูกต้องหรือไม่ใช่ไฟล์สำรองของ Spa Manager')}e.target.value=''};r.readAsText(file)}
+function exportExpenses(){const rows=[['วันที่','หมวดหมู่','รายละเอียด','จำนวนเงิน','ค่าคอมมิชชัน (%)'],...data.expenses.map(x=>[x.date,x.category,x.detail||'',x.amount,x.commission||0])];const csv='\uFEFF'+rows.map(r=>r.map(v=>'"'+String(v).replace(/"/g,'""')+'"').join(',')).join('\n');download('spa-expenses.csv',csv,'text/csv;charset=utf-8')}
+function download(name,content,type){const a=document.createElement('a');const u=URL.createObjectURL(new Blob([content],{type}));a.href=u;a.download=name;a.click();URL.revokeObjectURL(u)}
+function clearAllData(){if(confirm('ยืนยันลบข้อมูลทั้งหมด? แนะนำให้ดาวน์โหลด Backup ก่อน')){data={bookings:[],expenses:[],services:defaultServices,openingBalance:0,monthlyGoal:0,yearlyGoal:0};save()}}
+function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+document.getElementById('todayLabel').textContent=new Date().toLocaleDateString('th-TH',{weekday:'short',day:'numeric',month:'long',year:'numeric'});
+applyTheme();
+renderAll();
+if('serviceWorker' in navigator && location.protocol!=='file:'){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}))}
+</script>
+</body></html>
